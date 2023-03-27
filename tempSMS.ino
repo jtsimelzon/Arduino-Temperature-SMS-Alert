@@ -39,37 +39,37 @@ void loop() {
 }
 
 void initialOverheating(){ // alert sent when dog is mildly overheated
-  GSMSerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
-  delay(1000);  // Delay of 1000 milli seconds or 1 second
-  GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); // Replace x with mobile number
+  GSMSerial.println("AT+CMGF=1");    
+  delay(1000); 
+  GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); 
   delay(1000);
   GSMSerial.println("ALERT: Your dog is overheating. Recorded temperature:" + cel +
-  ". This is slightly over your dog's healthy temeprature. ");// The SMS text you want to send
+  ". This is slightly over your dog's healthy temeprature. ");
   delay(100);
-  GSMSerial.println((char)26);// ASCII code of CTRL+Z
+  GSMSerial.println((char)26);
   delay(1000);
 }
 
 void mainOverheating(){ // alert sent when dog is noticeably too hot 
-  GSMSerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
-  delay(1000);  // Delay of 1000 milli seconds or 1 second
-  GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); // Replace x with mobile number
+  GSMSerial.println("AT+CMGF=1");   
+  delay(1000);  
+  GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); 
   delay(1000);
   GSMSerial.println("ALERT: Your dog is overheating. Recorded temperature:" + cel + 
-  ". This is considerably over your dog's regular temperature.");// The SMS text you want to send
+  ". This is considerably over your dog's regular temperature.");
   delay(100);
-  GSMSerial.println((char)26);// ASCII code of CTRL+Z
+  GSMSerial.println((char)26);
   delay(1000);
 }
 
 void severeOverheating(){ // alert sent when there is severe overheating 
-  GSMSerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
-  delay(1000);  // Delay of 1000 milli seconds or 1 second
-  GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); // Replace x with mobile number
+  GSMSerial.println("AT+CMGF=1");  
+  delay(1000);  
+  GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); 
   delay(1000);
   GSMSerial.println("ALERT: Your dog is overheating. Recorded temperature:" + cel + 
-  ". This is severly over your dog's regular temperature. Seek medical help!");// The SMS text you want to send
+  ". This is severly over your dog's regular temperature. Seek medical help!");
   delay(100);
-  GSMSerial.println((char)26);// ASCII code of CTRL+Z
+  GSMSerial.println((char)26);
   delay(1000);
 }
