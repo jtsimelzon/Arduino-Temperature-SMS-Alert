@@ -38,7 +38,7 @@ void loop() {
 
 }
 
-void initialOverheating(){
+void initialOverheating(){ // alert sent when dog is mildly overheated
   GSMSerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
   delay(1000);  // Delay of 1000 milli seconds or 1 second
   GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); // Replace x with mobile number
@@ -50,7 +50,7 @@ void initialOverheating(){
   delay(1000);
 }
 
-void mainOverheating(){
+void mainOverheating(){ // alert sent when dog is noticeably too hot 
   GSMSerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
   delay(1000);  // Delay of 1000 milli seconds or 1 second
   GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); // Replace x with mobile number
@@ -62,7 +62,7 @@ void mainOverheating(){
   delay(1000);
 }
 
-void severeOverheating(){
+void severeOverheating(){ // alert sent when there is severe overheating 
   GSMSerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
   delay(1000);  // Delay of 1000 milli seconds or 1 second
   GSMSerial.println("AT+CMGS=\"+91xxxxxxxxxx\"\r"); // Replace x with mobile number
